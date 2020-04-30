@@ -10,6 +10,13 @@ $(document).ready(function() {
   console.log(nowHour12);
   console.log(nowHour24);
 
+  $("#activity").click(function() {
+    document.createElement("input");
+
+  })
+
+  
+
 
   var $hourRow = $('#activity');
   
