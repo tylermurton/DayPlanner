@@ -1,0 +1,41 @@
+.navbar {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  background-color: aqua;
+}
+#navbar-subtitle{
+  font-size: 20px;
+}
+#navbar-title{
+  font-size: 25px;
+}
+
+#plannerContainer {
+  background-color: cadetblue;
+  height: 600px;
+  margin-top: 10px;
+}
+
+.row {
+  padding-top: 20px;
+  padding-left: 20px;
+  margin: 0 auto;
+  height: 65px;
+}
+
+#time {
+  background-color: white;
+  text-align: center;
+  padding-top: 12px;
+  border-radius: 15px 0px 0px 15px;
+}
+
+#activity {
+  background-color: grey;
+}
+
+#save {
+  background-color: hotpink;
+  border-radius: 0px 15px 15px 0px;
+}
