@@ -24,3 +24,23 @@ body {
 button {
   border-radius: 0px 10px 10px 0px;
 }
+
+@media only screen and (max-width: 400px) {
+  button {
+    border-radius: 0px 10px 10px 0px; 
+    border-left: 0ch;   
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  button {
+    border-radius: 20px 20px 20px 20px; 
+    border-left: 0ch; 
+    padding-top: 10px; 
+    margin-left: 10px; 
+  }
+  #saveButton {
+    padding-right: 30px;
+    padding-bottom: 10px;
+  }
+}
