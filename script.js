@@ -23,29 +23,32 @@ $(document).ready(function() {
 //--onclick event to save user input to local storage---//
 $('button').on("click", function() {
   var timeOfday = $(this).parent().attr("id");
-  var textContent = $("input").val().trim();
-
+  var textContent = $(this).siblings('input').val();
+  
   localStorage.setItem(timeOfday, textContent);
   console.log(timeOfday, textContent);
-});
+  });
+  
+  
+
 
 //-------Getting individual childern and setting to parent-----//
-$("#9am").children("input").val(localStorage.getItem("9am"));
+$("#9am").children("#9").val(localStorage.getItem("9am"));
 
-$("#10am").children("input").val(localStorage.getItem("10am"));
+$("#10am").children("#10").val(localStorage.getItem("10am"));
 
-$("#11am").children("input").val(localStorage.getItem("11am"));
+$("#11am").children("#11").val(localStorage.getItem("11am"));
 
-$("#12pm").children("input").val(localStorage.getItem("12pm"));
+$("#12pm").children("#12").val(localStorage.getItem("12pm"));
 
-$("#1pm").children("input").val(localStorage.getItem("1pm"));
+$("#1pm").children("#13").val(localStorage.getItem("1pm"));
 
-$("#2pm").children("input").val(localStorage.getItem("2pm"));
+$("#2pm").children("#14").val(localStorage.getItem("2pm"));
 
-$("#3pm").children("input").val(localStorage.getItem("3pm"));
+$("#3pm").children("#15").val(localStorage.getItem("3pm"));
 
-$("#4pm").children("input").val(localStorage.getItem("4pm"));
+$("#4pm").children("#16").val(localStorage.getItem("4pm"));
 
-$("#5pm").children("input").val(localStorage.getItem("5pm"));
+$("#5pm").children("#17").val(localStorage.getItem("5pm"));
  
 });
