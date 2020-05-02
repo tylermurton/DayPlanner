@@ -4,37 +4,48 @@ $(document).ready(function() {
   var $dateHeading = $('#navbar-subtitle');
   $dateHeading.text(currentDay);
 
-  var nowHour24 = moment().format('H');
-  var nowHour12 = moment().format('h');
+  var timeOfDay = ["9", "10", "11", "12", "13", "14", "15", "16", "17"]
+  updatetime();
 
-  console.log(nowHour12);
-  console.log(nowHour24);
-
-  $("#activity").click(function() {
-    document.createElement("input");
-
-  })
-
+  function updatetime() {
+    var currentTime = moment().format('H');
+    for(var i = 0; i < timeOfDay.length; i++) {
+      if (parseInt(timeOfDay[i]) > currentTime) {
+        $("#" + timeOfDay[i]).attr("style", "background-color: #58ce7b");
+      } else if (parseInt(timeOfDay[i]) < currentTime) {
+        $("#" + timeOfDay[i]).attr("style", "background-color: lightgray");
+      } else if (parseInt(timeOfDay[i]) == currentTime) {
+        $("#" + timeOfDay[i]).attr("style", "background-color: #fc665e");
+      }
+    }
+  };
   
+//--onclick event to save user input to local storage---//
+$('button').on("click", function() {
+  var timeOfday = $(this).parent().attr("id");
+  var textContent = $("input").val().trim();
 
+  localStorage.setItem(timeOfday, textContent);
+  console.log(timeOfday, textContent);
+});
 
-  var $hourRow = $('#activity');
-  
+//-------Getting individual childern and setting to parent-----//
+$("#9am").children("input").val(localStorage.getItem("9am"));
 
-  
+$("#10am").children("input").val(localStorage.getItem("10am"));
 
-   // build calendar by row for fix set of hours
-   for (var hour = 9; hour <= 17; hour++) {
-    // index for array use offset from hour
-    var index = hour - 9;
+$("#11am").children("input").val(localStorage.getItem("11am"));
 
+$("#12pm").children("input").val(localStorage.getItem("12pm"));
 
-   }
+$("#1pm").children("input").val(localStorage.getItem("1pm"));
 
-   function updateRowColor ($hourRow) {
-     if (hour < nowHour24) {
-       $hourRow.css("background-color", "lightgrey")
-     }
-   }
+$("#2pm").children("input").val(localStorage.getItem("2pm"));
 
+$("#3pm").children("input").val(localStorage.getItem("3pm"));
+
+$("#4pm").children("input").val(localStorage.getItem("4pm"));
+
+$("#5pm").children("input").val(localStorage.getItem("5pm"));
+ 
 });
