@@ -21,13 +21,25 @@ $(document).ready(function() {
   };
   
 //--onclick event to save user input to local storage---//
-$('button').on("click", function() {
+$('button').on("click", function saveIt() {
   var timeOfday = $(this).parent().attr("id");
   var textContent = $(this).siblings('input').val();
   
   localStorage.setItem(timeOfday, textContent);
   console.log(timeOfday, textContent);
+  
   });
+
+  $('input').keypress(function (e) {
+    var key = e.which;
+    if(key == 13)  // the enter key code
+     {
+       $('button').click();
+       $(this).attr("disabled", "disabled"); //makes it so you're done editing when you press enter
+       $(this).removeAttr("disabled"); //you can edit it again if you want though
+       
+     }
+   });   
   
   
 
