@@ -21,7 +21,7 @@ $(document).ready(function() {
   };
   
 //--onclick event to save user input to local storage---//
-$('button').on("click", function saveIt() {
+$('.col-1').on("click", function saveIt() {
   var timeOfday = $(this).parent().attr("id");
   var textContent = $(this).siblings('input').val();
   
@@ -34,7 +34,7 @@ $('button').on("click", function saveIt() {
     var key = e.which;
     if(key == 13)  // the enter key code
      {
-       $('button').click();
+       $('.col-1').click();
        $(this).attr("disabled", "disabled"); //makes it so you're done editing when you press enter
        $(this).removeAttr("disabled"); //you can edit it again if you want though
        
@@ -62,5 +62,21 @@ $("#3pm").children("#15").val(localStorage.getItem("3pm"));
 $("#4pm").children("#16").val(localStorage.getItem("4pm"));
 
 $("#5pm").children("#17").val(localStorage.getItem("5pm"));
+
+
+//Clear Local Storage
+function clearLocalStorage() {
+  localStorage.clear();
+};
+
+$("#clear").click(function() {
+  if(confirm("Are you sure you want to clear all saved events?")) {
+    clearLocalStorage();
+    $("input").val("");
+
+  }
+});
+
+
  
 });

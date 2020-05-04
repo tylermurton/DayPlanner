@@ -25,6 +25,10 @@ button {
   border-radius: 0px 10px 10px 0px;
 }
 
+#clear {
+  border-radius: 10px 10px 10px 10px;
+}
+
 @media only screen and (max-width: 400px) {
   button {
     border-radius: 0px 10px 10px 0px; 
